@@ -4,11 +4,11 @@ import { Avatar, Dropdown, Navbar } from "flowbite-react";
 
 export default function Header() {
   return (
-    <main className="bg-blue-700 bg-blur-sm px-1 py-1 rounded-b-lg h-full w-[100%] sm:w-[80%] justify-evenly">
+    <main className="bg-blue-700 z-10 bg-opacity-80 fixed px-1 py-1 rounded-b-lg w-[100%] sm:w-[80%] justify-evenly">
       <Navbar
         fluid
         rounded
-        className="bg-blue-700 text-xl text-white"
+        className="bg-blue-700 text-xl bg-opacity-80 text-white"
       >
         <Navbar.Brand href="/">
           <img
