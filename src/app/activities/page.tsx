@@ -1,5 +1,6 @@
 import React from 'react'
 
+
 export default function Activities() {
   return (
     <div className='flex items-center justify-center text-5xl'>
