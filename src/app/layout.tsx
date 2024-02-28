@@ -17,7 +17,6 @@ export default function RootLayout({
       <body className="flex flex-col items-center">
         <Header/>
         {children}
-
       </body>
     </html>
   );
