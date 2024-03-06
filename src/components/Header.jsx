@@ -44,7 +44,7 @@ export default function Header() {
           <Navbar.Link href="/about" className=" ml-4 text-xl text-white">
             Acerca del Club
           </Navbar.Link>
-          <Navbar.Link href="activities" className="text-xl text-white">
+          <Navbar.Link href="/activities" className="text-xl text-white">
             Actividades
           </Navbar.Link>
         </Navbar.Collapse>
