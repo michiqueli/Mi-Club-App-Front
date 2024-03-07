@@ -9,7 +9,7 @@ import paddle from "../../../public/paddle.jpg";
 export default function Activities() {
   const router = useRouter();
   return (
-    <div className="flex items-center space-x-8 justify-center  mt-44  ">
+    <div className="flex items-center space-x-8 justify-center  mt-44 flex-col space-y-1 xl:flex-row xl:space-x-8">
       <div className="object-cover text-5xl text-center transition-transform duration-1000 hover:scale-105">
       <button
         onClick={() => router.push("/activities/handball")}
