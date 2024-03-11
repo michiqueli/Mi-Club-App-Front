@@ -4,7 +4,7 @@ const createUser = async (userData: any) => {
       const response = await fetch(`https://mi-club-app-back.vercel.app/v1/auth/register`, {
         method: 'POST',
             headers: {
-                'Content-type': 'application/json',
+                'Content-Type': 'application/json',
             },
             body: JSON.stringify(userData),
         });
