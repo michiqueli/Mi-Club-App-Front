@@ -6,9 +6,14 @@ import { useSession } from "next-auth/react";
 import { UserData } from "@/components/constants/interfaces";
 import getUserById from "@/components/constants/request/getUserById";
 
+interface LoguedUser {
+userId: string,
+}
+
 export default function UserPanel() {
   const { data: session } = useSession();
-  const id = session?.user?.userId as string;
+  const loguedUser  = session?.user as LoguedUser
+  const id = loguedUser?.userId 
   const [user, setUser] = useState<UserData | undefined | null>();
   const [loading, setLoading] = useState(true);
 

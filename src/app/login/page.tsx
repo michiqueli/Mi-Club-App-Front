@@ -7,7 +7,7 @@ import Field from "../../components/field";
 import { signIn } from "next-auth/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-const loginPage = () => {
+const LoginPage = () => {
   const router = useRouter();
   const [credentials, setCredentials] = useState<CredentialsLogin>({
     email: "",
@@ -139,4 +139,4 @@ const loginPage = () => {
   );
 };
 
-export default loginPage;
+export default LoginPage;

@@ -1,7 +1,6 @@
 "use client";
 import Field from "../../components/field";
 import { useRouter } from "next/navigation";
-import Swal from "sweetalert2";
 import axios from "axios";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useState, ChangeEvent, FormEvent } from "react";
@@ -22,7 +21,7 @@ const RegisterPage = () => {
     dob: "",
     phone: "",
     image: "",
-    number: 1,
+    number: 0,
   });
 
   const [errors, setErrors] = useState<Errors>({});
@@ -88,7 +87,7 @@ const RegisterPage = () => {
 
   return (
     <div className="flex flex-col justify-center items-center my-4 w-full pt-44">
-      <div className="flex flex-col items-center h-full w-3/12 mb-4 bg-gray-100 mx-2 border border-gray-300 rounded-lg shadow">
+      <div className="flex flex-col items-center h-full mb-4 bg-gray-100 mx-2 border border-gray-300 rounded-lg shadow">
         <form
           onSubmit={handleSubmit}
           className="flex flex-col items-center h-full w-full mx-2"
