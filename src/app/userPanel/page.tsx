@@ -53,6 +53,8 @@ export default function UserPanel() {
                 src={user?.socio.image}
                 alt="Foto de Socio"
                 className="mb-4 rounded-full"
+                height={200}
+                width={200}
               />
               <h1>Nombre</h1>
               <h1 className="border-b-4 border-blue-200 mb-4">
