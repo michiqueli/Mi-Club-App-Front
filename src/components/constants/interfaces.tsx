@@ -22,3 +22,27 @@ export interface UserData {
     image: string;
   };
 }
+
+export interface FieldProps {
+  placeholder: string;
+  name: string;
+  type: string,
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  value: string | number;
+}
+
+export interface CredentialsLogin {
+  email: string;
+  password: string;
+}
+
+export interface Errors {
+  name?: string;
+  last_name?: string;
+  email?: string;
+  password?: string;
+  street?: string;
+  dni?: string;
+  dob?: Date;
+  phone?: string
+}

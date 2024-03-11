@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Header from "../components/Header";
+import SessionAuthProvider from "@/context/SessionAuthProvider";
+
 
 export const metadata: Metadata = {
   title: "Peuma Limay",
@@ -15,8 +17,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="flex flex-col items-center">
-        <Header/>
-        {children}
+          <SessionAuthProvider>
+          <Header />
+          {children}
+          </SessionAuthProvider>
       </body>
     </html>
   );

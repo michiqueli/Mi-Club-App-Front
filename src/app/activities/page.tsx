@@ -9,7 +9,7 @@ import paddle from "../../../public/paddle.jpg";
 export default function Activities() {
   const router = useRouter();
   return (
-    <div className="flex items-center space-x-8 justify-center  mt-44 flex-col space-y-1 xl:flex-row xl:space-x-8">
+    <div className="flex items-center space-x-8 justify-center  mt-44 flex-col space-y-1 sm:flex-row xl:space-x-8">
       <div className="object-cover text-5xl text-center transition-transform duration-1000 hover:scale-105">
       <button
         onClick={() => router.push("/activities/handball")}
@@ -17,6 +17,7 @@ export default function Activities() {
       >
         <Image
           src={handball}
+          priority
           alt="Hmandball"
           className="object-fill h-full w-full rounded-t-2xl"
         ></Image>
@@ -32,7 +33,8 @@ export default function Activities() {
       >
         <Image
           src={paddle}
-          alt="Hmandball"
+          priority
+          alt="Paddle"
           className="object-fill h-full w-full rounded-t-2xl"
         ></Image>
         <h1 className=" text-blue-700 border-2 border-t-0 pb-2 border-blue-200 rounded-b-xl">
