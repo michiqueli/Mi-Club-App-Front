@@ -53,7 +53,7 @@ const RegisterPage = () => {
       data.append("file", file || "");
       const res = await axios.post(`https://mi-club-app-back.vercel.app/api/v1/upload`, data);
       setRes(res.data.secure_url);
-      setImageUrl(res.data.url);
+      setImageUrl(res.data.secure_url);
       setShowDeleteButton(true);
     } catch (error) {
       alert(error);
