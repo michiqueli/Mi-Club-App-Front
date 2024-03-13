@@ -54,7 +54,7 @@ const RegisterPage = () => {
       const res = await axios.post(`https://mi-club-app-back.vercel.app/api/v1/upload`, data);
       setRes(res.data.secure_url);
       setImageUrl(res.data.url);
-      setShowDeleteButton(true); // Mostrar el botón de eliminar
+      setShowDeleteButton(true);
     } catch (error) {
       alert(error);
     } finally {
@@ -69,11 +69,13 @@ const RegisterPage = () => {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    let fullUser = { ...userData, image: res };
-    const validationErrors = validator(fullUser);
+    setUserData( { ...userData, image: res });
+    const validationErrors = validator(userData);
     setErrors(validationErrors);
     try {
-      await createUser(fullUser);
+      await createUser(userData).then((result) => {
+        router.push("/login");
+      });;
     }catch(error: any){
       console.error("Error en el Registro: ", error.message);
     }

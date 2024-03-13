@@ -5,15 +5,12 @@ import { Spinner } from "flowbite-react";
 import { useSession } from "next-auth/react";
 import { UserData } from "@/components/constants/interfaces";
 import getUserById from "@/components/constants/request/getUserById";
-
-interface LoguedUser {
-userId: string,
-}
+import { LoguedUser } from "@/components/constants/interfaces";
 
 export default function UserPanel() {
   const { data: session } = useSession();
   const loguedUser  = session?.user as LoguedUser
-  const id = loguedUser?.userId 
+  const id = loguedUser?.userId
   const [user, setUser] = useState<UserData | undefined | null>();
   const [loading, setLoading] = useState(true);
 
@@ -53,6 +50,8 @@ export default function UserPanel() {
                 src={user?.socio.image}
                 alt="Foto de Socio"
                 className="mb-4 rounded-full"
+                height={200}
+                width={200}
               />
               <h1>Nombre</h1>
               <h1 className="border-b-4 border-blue-200 mb-4">
