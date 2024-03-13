@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CredentialsLogin } from "../../components/constants/interfaces";
 import Field from "../../components/field";
-import { getSession, signIn, useSession } from "next-auth/react";
+import { getSession, signIn } from "next-auth/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { LoguedUser } from "@/components/constants/interfaces";
 
