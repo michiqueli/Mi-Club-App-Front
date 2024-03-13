@@ -44,5 +44,4 @@ const createUser = async (userData: any) => {
     }
   }
 };
-
 export default createUser;
