@@ -25,7 +25,6 @@ export default function Header() {
         setUser(null);
       }
     };
-
     fetchData();
   }, [id]);
 

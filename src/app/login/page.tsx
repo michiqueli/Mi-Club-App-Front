@@ -4,8 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CredentialsLogin } from "../../components/constants/interfaces";
 import Field from "../../components/field";
-import { signIn } from "next-auth/react";
+import { getSession, signIn, useSession } from "next-auth/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { LoguedUser } from "@/components/constants/interfaces";
 
 const LoginPage = () => {
   const router = useRouter();
@@ -35,25 +36,27 @@ const LoginPage = () => {
         email: credentials.email,
         password: credentials.password,
         redirect: false,
-      }).then((response) => {
-        if (response?.status == 401) {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: `Credenciales invalidas!!\nEsta seguro de que estan bien??!!\nSi es así entonces revise su Mail quiza su cuenta fue Baneada`,
-          });
-          setError({ email: "Credenciales Invalidas" });
-        } else {
-          Swal.fire({
-            position: "center",
-            icon: "success",
-            title: "Logueado Correctamente",
-            showConfirmButton: false,
-            timer: 1500,
-          });
-          router.push("/");
-        }
       });
+      const session = await getSession();
+      const loguedUser = session?.user as LoguedUser;
+      if (loguedUser.detail?.message) {
+        const message = loguedUser.detail?.message;
+        Swal.fire({
+          icon: "error",
+          title: "Oops...",
+          text: `${message}`,
+        });
+        setError({ email: "Credenciales Invalidas" });
+      } else {
+        Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "Logueado Correctamente",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        router.push("/");
+      }
     } catch (error) {
       if (error instanceof Error) {
         Swal.fire({

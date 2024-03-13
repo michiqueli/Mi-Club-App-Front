@@ -1,3 +1,5 @@
+import { DefaultSession } from "next-auth";
+
 export interface UserData {
   createdAt: Date;
   updatedAt: Date;
@@ -45,4 +47,16 @@ export interface Errors {
   dni?: string;
   dob?: Date;
   phone?: string
+}
+
+export interface LoguedUser extends DefaultSession {
+      name: string;
+      email: string;
+      image: string;
+      userId?: string,
+      detail?: {
+        message?: [
+          string
+        ]
+      }
 }

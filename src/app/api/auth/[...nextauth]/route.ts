@@ -16,7 +16,7 @@ const handler = NextAuth({
       },
       async authorize(credentials, req) {
         const res = await fetch(
-          `https://mi-club-app-back.vercel.app/api/v1/auth/login`,
+          `${process.env.BASE_URL}/auth/login`,
           {
             method: "POST",
             body: JSON.stringify({
