@@ -43,7 +43,7 @@ const RegisterPage = () => {
   const [loading, setLoading] = useState(false);
   const [res, setRes] = useState("");
   const handleSelectFile = (e: any) => setFile(e.target.files[0]);
-  const [imageUrl, setImageUrl] = useState<string | null>(null);
+  const [imageUrl, setImageUrl] = useState<string>('');
   const [showDeleteButton, setShowDeleteButton] = useState(false);
 
   const handleImageUpload = async () => {
@@ -53,7 +53,7 @@ const RegisterPage = () => {
       data.append("file", file || "");
       const res = await axios.post(`https://mi-club-app-back.vercel.app/api/v1/upload`, data);
       setRes(res.data.secure_url);
-      setImageUrl(res.data.secure_url);
+      setImageUrl(res.data.url);
       setShowDeleteButton(true);
     } catch (error) {
       alert(error);
@@ -62,18 +62,18 @@ const RegisterPage = () => {
     }
   };
   const handleDeleteImage = () => {
-    setImageUrl(null);
+    setImageUrl('');
     setRes("");
     setShowDeleteButton(false);
   };
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
-    setUserData( { ...userData, image: res });
-    const validationErrors = validator(userData);
+    const fullUser = { ...userData, image: res };
+    const validationErrors = validator(fullUser);
     setErrors(validationErrors);
     try {
-      await createUser(userData).then((result) => {
+      await createUser(fullUser).then((result) => {
         router.push("/login");
       });;
     }catch(error: any){
