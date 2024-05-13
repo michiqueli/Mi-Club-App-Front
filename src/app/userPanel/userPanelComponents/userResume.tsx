@@ -1,5 +1,5 @@
 "use client"
-import ReservasData from "./ReservasData";
+import ReservasData from "./reservasData";
 import ActivitiesData from "./activitiesData";
 import ActivitiesDataResume from "./activitiesDataResume";
 import CuotasData from "./cuotasData";
