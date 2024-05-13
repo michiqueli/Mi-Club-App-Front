@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Spinner } from "flowbite-react";
 import { useSession } from "next-auth/react";
-import { UserData } from "@/components/constants/interfaces";
+import { UserDataInterface } from "@/components/constants/interfaces";
 import getUserById from "@/components/constants/request/getUserById";
 import { LoguedUser } from "@/components/constants/interfaces";
 
@@ -11,7 +11,7 @@ export default function UserData() {
   const { data: session } = useSession();
   const loguedUser = session?.user as LoguedUser;
   const id = loguedUser?.userId;
-  const [user, setUser] = useState<UserData | undefined | null>();
+  const [user, setUser] = useState<UserDataInterface | undefined | null>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
