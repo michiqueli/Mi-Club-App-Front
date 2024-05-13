@@ -1,10 +1,37 @@
-export default function UserResume() {
+"use client"
+import ReservasData from "./ReservasData";
+import ActivitiesData from "./activitiesData";
+import ActivitiesDataResume from "./activitiesDataResume";
+import CuotasData from "./cuotasData";
+import CuotasDataesume from "./cuotasDataResume";
+import ReservasDataResume from "./reservasDataResume";
+import UserData from "./userData";
+import UserDataResume from "./userDataResume";
+import { UserResumeProps } from "@/components/constants/interfaces";
+
+const UserResume: React.FC<UserResumeProps> = ({ setMostrar }) => {
+
+  const userDataClick = () => {
+    setMostrar(<UserData/>);
+  };
+  const cuotasDataClick = () => {
+    setMostrar(<CuotasData/>)
+  }
+  const activitiesDataClick = () => {
+    setMostrar(<ActivitiesData/>)
+  }
+  const reservasDataClick = () => {
+    setMostrar(<ReservasData/>)
+  }
+
+
   return (
     <main className="grid grid-cols-2 grid-rows-2 gap-4 items-center content-center text-center justify-around h-full w-full">
-      <div className="bg-gray-200 p-4 m-4">Tarjeta de resumen de Datos</div>
-      <div className="bg-gray-200 p-4 m-4">Tarjeta de resumen de Cuotas</div>
-      <div className="bg-gray-200 p-4 m-4">Tarjeta de resumen de Actividades</div>
-      <div className="bg-gray-200 p-4 m-4">Tarjeta de resumen de Reservas</div>
+      <button onClick={userDataClick}><UserDataResume/></button>
+      <button onClick={cuotasDataClick}><CuotasDataesume/></button>
+      <button onClick={activitiesDataClick}><ActivitiesDataResume/></button>
+      <button onClick={reservasDataClick}><ReservasDataResume/></button>
     </main>
   );
 }
+export default UserResume;

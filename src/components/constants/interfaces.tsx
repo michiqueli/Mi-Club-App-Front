@@ -1,6 +1,6 @@
 import { DefaultSession } from "next-auth";
 
-export interface UserData {
+export interface UserDataInterface {
   createdAt: Date;
   updatedAt: Date;
   deletedAt: Date;
@@ -59,4 +59,8 @@ export interface LoguedUser extends DefaultSession {
           string
         ]
       }
+}
+
+export interface UserResumeProps {
+  setMostrar: React.Dispatch<React.SetStateAction<React.ReactNode>>;
 }
