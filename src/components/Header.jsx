@@ -65,7 +65,7 @@ export default function Header() {
               </Dropdown.Header>
               <Dropdown.Item href="/userPanel">Panel de Usuario</Dropdown.Item>
               <Dropdown.Divider />
-              {user.socio.role == "admin" ? (
+              {user.role == "admin" ? (
                 <Dropdown.Item href="/adminPanel">
                   Panel de Administración
                 </Dropdown.Item>
