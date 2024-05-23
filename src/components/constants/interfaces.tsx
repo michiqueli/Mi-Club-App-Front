@@ -64,3 +64,7 @@ export interface LoguedUser extends DefaultSession {
 export interface UserResumeProps {
   setMostrar: React.Dispatch<React.SetStateAction<React.ReactNode>>;
 }
+
+export interface UserResumeProps {
+  setMostrar: React.Dispatch<React.SetStateAction<React.ReactNode>>;
+}

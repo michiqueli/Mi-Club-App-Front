@@ -59,10 +59,13 @@ export default function Header() {
                 <span className="block truncate text-sm font-medium">
                   {user?.email}
                 </span>
+                <span className="block truncate text-sm font-medium">
+                  Socio N° {user?.socio.number}
+                </span>
               </Dropdown.Header>
               <Dropdown.Item href="/userPanel">Panel de Usuario</Dropdown.Item>
               <Dropdown.Divider />
-              {user.socio.role == "admin" ? (
+              {user.role == "admin" ? (
                 <Dropdown.Item href="/adminPanel">
                   Panel de Administración
                 </Dropdown.Item>
