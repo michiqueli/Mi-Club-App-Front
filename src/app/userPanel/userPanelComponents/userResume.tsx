@@ -26,11 +26,11 @@ const UserResume: React.FC<UserResumeProps> = ({ setMostrar }) => {
 
 
   return (
-    <main className="grid grid-cols-2 grid-rows-2 gap-4 items-center content-center text-center justify-around h-full w-full">
-      <button onClick={userDataClick}><UserDataResume/></button>
-      <button onClick={cuotasDataClick}><CuotasDataesume/></button>
-      <button onClick={activitiesDataClick}><ActivitiesDataResume/></button>
-      <button onClick={reservasDataClick}><ReservasDataResume/></button>
+    <main className="flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 gap-4 items-center content-center text-center justify-around h-full w-full">
+      <button className="h-full" onClick={userDataClick}><UserDataResume/></button>
+      <button className="h-full" onClick={cuotasDataClick}><CuotasDataesume/></button>
+      <button className="h-full" onClick={activitiesDataClick}><ActivitiesDataResume/></button>
+      <button className="h-full" onClick={reservasDataClick}><ReservasDataResume/></button>
     </main>
   );
 }

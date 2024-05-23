@@ -1,9 +1,9 @@
-import { UserFullData } from "@/components/constants/interfaces";
+import { UserDataInterface } from "@/components/constants/interfaces";
 import getUserById from "@/components/constants/request/getUserById";
 import { useEffect, useState } from "react";
 
 const useUserById = (id: string | undefined) => {
-  const [user, setUser] = useState<UserFullData | undefined | null>();
+  const [user, setUser] = useState<UserDataInterface | undefined | null>();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
