@@ -22,6 +22,24 @@ export interface UserDataInterface {
     address: string;
     phone: string;
     image: string;
+    cuotas: [
+      {
+        id: string
+        name: string
+        month: number
+        year: number
+        price: number
+        isPayed: boolean
+      }
+    ]
+    actividades: [
+      {
+        id: string
+        name: string
+        days: string
+        hours: string
+      }
+    ]
   };
 }
 
@@ -59,6 +77,10 @@ export interface LoguedUser extends DefaultSession {
           string
         ]
       }
+}
+
+export interface UserResumeProps {
+  setMostrar: React.Dispatch<React.SetStateAction<React.ReactNode>>;
 }
 
 export interface UserResumeProps {
