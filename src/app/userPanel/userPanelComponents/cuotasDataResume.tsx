@@ -52,13 +52,13 @@ export default function CuotasDataResume() {
                 MIS CUOTAS
               </h1>
             </div>
-            {user?.socio.cuotas.map((cuota) => {
+            {user?.socio.cuotas.map((cuota, index) => {
               return (
-                <div>
+                <div key={index}>
                   {cuota.isPayed ? (
-                    <h1 className=" bg-lime-500 text-xs md:text-xl">{cuota.name}</h1>
+                    <h1 className=" bg-lime-500 text-xs md:text-xl"><span>{cuota.name}</span><span>: Al día ✅ </span></h1>
                   ) : (
-                    <h1 className=" bg-red-600 text-xs md:text-xl">{cuota.name}</h1>
+                    <h1 className=" bg-red-300 text-xs md:text-xl"><span>{cuota.name}</span><span>: Deuda ❌</span></h1>
                   )}
                 </div>
               );

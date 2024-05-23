@@ -52,9 +52,9 @@ export default function ActivitiesDataResume() {
                 MIS ACTIVIDADES
               </h1>
             </div>
-            {user?.socio.actividades.map((actividad) => {
+            {user?.socio.actividades.map((actividad, index) => {
               return (
-                <div>
+                <div key={index}>
                   <h1 className=" bg-lime-500 text-xs md:text-xl">{actividad.name}</h1>
                 </div>
               );
