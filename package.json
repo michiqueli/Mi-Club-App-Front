@@ -9,16 +9,17 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-table": "^8.17.3",
     "axios": "^1.6.7",
     "flowbite-react": "^0.7.2",
     "next": "^14.1.0",
+    "next-auth": "^4.24.7",
     "postcss-loader": "^8.1.0",
     "react": "^18",
     "react-card-flip": "^1.2.2",
     "react-dom": "^18",
     "react-phone-number-input": "^3.3.9",
     "react-spring": "^9.7.3",
-    "next-auth": "^4.24.7",
     "sweetalert2": "^11.10.6"
   },
   "devDependencies": {

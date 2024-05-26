@@ -24,29 +24,35 @@ export interface UserDataInterface {
     image: string;
     cuotas: [
       {
-        id: string
-        name: string
-        month: number
-        year: number
-        price: number
-        isPayed: boolean
+        id: string;
+        name: string;
+        month: number;
+        year: number;
+        price: number;
+        isPayed: boolean;
       }
-    ]
+    ];
     actividades: [
       {
-        id: string
-        name: string
-        days: string
-        hours: string
+        id: string;
+        name: string;
+        days: string;
+        hours: string;
       }
-    ]
+    ];
   };
 }
-
+export interface Cuota {
+  name: string;
+  month: number;
+  year: number;
+  price: number;
+  isPayed: boolean;
+}
 export interface FieldProps {
   placeholder: string;
   name: string;
-  type: string,
+  type: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   value: string | number;
 }
@@ -64,19 +70,17 @@ export interface Errors {
   street?: string;
   dni?: string;
   dob?: Date;
-  phone?: string
+  phone?: string;
 }
 
 export interface LoguedUser extends DefaultSession {
-      name: string;
-      email: string;
-      image: string;
-      userId?: string,
-      detail?: {
-        message?: [
-          string
-        ]
-      }
+  name: string;
+  email: string;
+  image: string;
+  userId?: string;
+  detail?: {
+    message?: [string];
+  };
 }
 
 export interface UserResumeProps {
