@@ -105,6 +105,17 @@ export default function CuotasData() {
       ) : (
         <div>
           <h1 className="text-3xl font-bold mb-4 text-center">MIS CUOTAS</h1>
+          <div className="flex justify-center text-center items-center">
+            <span className="m-2 text-lg text-center">
+              Buscar por cualquier propiedad
+            </span>
+            <input
+              className="rounded-lg text-black mb-2 text-lg"
+              type="text"
+              value={filtering}
+              onChange={(e) => setFiltering(e.target.value)}
+            />
+          </div>
           <table className="min-w-full bg-white text-center">
             <thead>
               {table.getHeaderGroups().map((headerGroup: any) => (
