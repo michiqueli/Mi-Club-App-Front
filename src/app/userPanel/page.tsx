@@ -39,6 +39,8 @@ import { useState, useEffect } from "react";
 import UserResume from "./userPanelComponents/userResume";
 import UserData from "./userPanelComponents/userData";
 import CuotasData from "./userPanelComponents/cuotasData";
+import ActivitiesData from "./userPanelComponents/activitiesData";
+import ReservasData from "./userPanelComponents/reservasData";
 
 export default function UserPanel() {
   const [mostrar, setMostrar] = useState<React.ReactNode>(null);
@@ -54,10 +56,10 @@ useEffect(() => {
     setMostrar (<CuotasData/>)
   }
   const activitiesDataClick = () => {
-    setMostrar (<CuotasData/>)
+    setMostrar (<ActivitiesData/>)
   }
   const reservasDataClick = () => {
-    setMostrar (<CuotasData/>)
+    setMostrar (<ReservasData/>)
   }
 
   const userResumeClick = () => {

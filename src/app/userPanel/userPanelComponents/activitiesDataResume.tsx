@@ -1,43 +1,16 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { Spinner } from "flowbite-react";
 import { useSession } from "next-auth/react";
-import {
-  UserDataInterface,
-  LoguedUser,
-} from "@/components/constants/interfaces";
-import getUserById from "@/components/constants/request/getUserById";
+import { LoguedUser } from "@/components/constants/interfaces";
+import useFetchUser from "@/hooks/useFetchUser";
 
 export default function ActivitiesDataResume() {
   const { data: session } = useSession();
   const loguedUser = session?.user as LoguedUser;
   const id = loguedUser?.userId;
-  const [user, setUser] = useState<UserDataInterface | undefined | null>();
-  const [loading, setLoading] = useState(true);
+  const { user, loading } = useFetchUser(id);
 
-  useEffect(() => {
-    const fetchData = async () => {
-      if (!id) {
-        setLoading(false);
-      } else {
-        try {
-          const data = await getUserById(id);
-          setUser(data.user);
-          setTimeout(() => {
-            setLoading(false);
-          }, 1000);
-        } catch (error) {
-          console.error(error);
-          setUser(null);
-          setTimeout(() => {
-            setLoading(false);
-          }, 1000);
-        }
-      }
-    };
-    fetchData();
-  }, [id]);
   return (
     <main className="flex items-center justify-center h-3/4 text-center content-center">
       {loading ? (
@@ -55,7 +28,9 @@ export default function ActivitiesDataResume() {
             {user?.socio.actividades.map((actividad, index) => {
               return (
                 <div key={index}>
-                  <h1 className=" bg-lime-500 text-xs md:text-xl">{actividad.name}</h1>
+                  <h1 className=" bg-lime-500 text-xs md:text-xl">
+                    {actividad.name}
+                  </h1>
                 </div>
               );
             })}
