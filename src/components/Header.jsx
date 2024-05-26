@@ -50,7 +50,15 @@ export default function Header() {
             <Dropdown
               arrowIcon={false}
               inline
-              label={<Avatar alt="" src={"user.png"} rounded />}
+              label={
+                <div className="relative w-10 h-10">
+                  <img
+                    alt="User Avatar"
+                    src={user?.socio.image || "/user.jpg"}
+                    className="rounded-full object-cover w-full h-full"
+                  />
+                </div>
+              }
             >
               <Dropdown.Header>
                 <span className="block text-sm">
@@ -80,7 +88,7 @@ export default function Header() {
                   });
                 }}
               >
-                Sign out
+                Cerrar sesión
               </Dropdown.Item>
             </Dropdown>
             <Navbar.Toggle />
@@ -96,7 +104,7 @@ export default function Header() {
                 <span className="block text-sm">No has Iniciado Sesion</span>
               </Dropdown.Header>
               <Dropdown.Item onClick={() => router.push("/login")}>
-                Sign In
+                Inicia Sesión aquí
               </Dropdown.Item>
             </Dropdown>
             <Navbar.Toggle />
